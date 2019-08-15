@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b15afb8-49ac-458e-acf9-1867727b4a36" name="Default Changelist" comment="Максимум из двух чисел [#189]">
-      <change afterPath="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/condition/Max.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/condition/MaxTest.java" afterDir="false" />
+    <list default="true" id="9b15afb8-49ac-458e-acf9-1867727b4a36" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/chapter_001/src/main/java/ru/job4j/condition/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chapter_001/src/test/java/ru/job4j/condition/TriangleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.calculator.FitTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.calculator.FitTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.condition.PointTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.condition.PointTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.condition.SqAreaTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.condition.SqAreaTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.converter.ConverterTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/TEST-ru.job4j.converter.ConverterTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.calculator.FitTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.calculator.FitTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.condition.SqAreaTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.condition.SqAreaTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.converter.ConverterTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_001/target/surefire-reports/ru.job4j.converter.ConverterTest.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MaxTest">
+  <component name="RunManager" selected="JUnit.TriangleTest">
     <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.job4j.calculator.Calculator" />
       <module name="chapter_001" />
@@ -103,8 +94,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TriangleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="chapter_001" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.job4j.condition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.job4j.condition" />
+      <option name="MAIN_CLASS_NAME" value="ru.job4j.condition.TriangleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TriangleTest" />
         <item itemvalue="JUnit.MaxTest" />
         <item itemvalue="Application.Calculator" />
         <item itemvalue="JUnit.DummyBotTest" />
@@ -143,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565870621378</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Максимум из двух чисел [#189]">
+      <created>1565879486628</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565879486628</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
