@@ -45,7 +45,7 @@
     <property name="java.class.path" value="E:\Obi.Disk E.Program Files\IntelliJ IDEA\IntelliJ IDEA Community Edition 2019.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2 install"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2 test"/>
     <property name="java.home" value="E:\Obi.Disk E.Program Files\IntelliJ IDEA\IntelliJ IDEA Community Edition 2019.2\jbr"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
