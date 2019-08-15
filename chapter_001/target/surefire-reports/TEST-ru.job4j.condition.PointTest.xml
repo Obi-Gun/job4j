@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ru.job4j.condition.PointTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="ru.job4j.condition.PointTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.3+12-b304.10"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="E:\Obi.Disk E.Program Files\IntelliJ IDEA\IntelliJ IDEA Community Edition 2019.2\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2 test"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2 install"/>
     <property name="java.home" value="E:\Obi.Disk E.Program Files\IntelliJ IDEA\IntelliJ IDEA Community Edition 2019.2\jbr"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -63,5 +63,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ru.job4j.condition.PointTest" name="ifFiveZeroToTenZeroThenDistanceIsFive" time="0.002"/>
+  <testcase classname="ru.job4j.condition.PointTest" name="ifFiveZeroToTenZeroThenDistanceIsFive" time="0"/>
 </testsuite>
