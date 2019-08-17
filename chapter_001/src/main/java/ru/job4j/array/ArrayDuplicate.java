@@ -13,7 +13,7 @@ public class ArrayDuplicate {
     public String[] remove(String[] array) {
         int uniqEl = array.length;
         for (int out = 0; out < uniqEl - 1; out++) {
-            for (int in = out + 1; in < uniqEl ; in++) {
+            for (int in = out + 1; in < uniqEl; in++) {
                 if (array[out].equals(array[in])) {
                     array[in] = array[uniqEl - 1];
                     uniqEl--;

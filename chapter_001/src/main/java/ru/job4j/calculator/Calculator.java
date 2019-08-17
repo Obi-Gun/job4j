@@ -30,12 +30,12 @@ public class Calculator {
 
     /**
      * Method main
-     * @param args
+     * @param args args.
      */
     public static void main(String[] args) {
         add(1, 1);
-        div(4,2);
-        multiply(2,1);
-        subtrack(10,5);
+        div(4, 2);
+        multiply(2, 1);
+        subtrack(10, 5);
     }
 }

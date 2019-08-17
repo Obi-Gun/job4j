@@ -110,7 +110,7 @@ public class FindLoopTest {
     public void whenSort5() {
         FindLoop find = new FindLoop();
         int[] input = new int[] {3, 4, 1, 2, 5, 3, 4, 1, 2, 5};
-        int result[] = find.sort(input);
+        int[] result = find.sort(input);
         int[] expect = new int[] {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
         assertThat(result, is(expect));
     }
