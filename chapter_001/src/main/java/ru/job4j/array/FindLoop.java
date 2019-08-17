@@ -12,7 +12,7 @@ public class FindLoop {
      * Method indexOf looking for an element in array and return index of an element
      * @param data - arr for search
      * @param el - element for search
-     * @return rst - index of an element
+     * @return rst - index of an element or -1 if method doesn`t have find an element
      */
     public int indexOf(int[] data, int el) {
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
@@ -32,7 +32,7 @@ public class FindLoop {
      * @param el element for search
      * @param startIndex start index for search
      * @param finishIndex finish index for search
-     * @return index of an element
+     * @return index of an element or -1 if method doesn`t have find an element
      */
     public int indexOf(int[] data, int el, int startIndex, int finishIndex) {
         if (startIndex > finishIndex) {
@@ -43,9 +43,6 @@ public class FindLoop {
         if (startIndex < 0) {
             startIndex = 0;
         }
-        if (finishIndex >= data.length) {
-            finishIndex = data.length - 1;
-        }
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
         for (int index = startIndex; index < data.length && index <= finishIndex; index++) {
             if (data[index] == el) {
@@ -54,5 +51,45 @@ public class FindLoop {
             }
         }
         return rst;
+    }
+
+    /**
+     * Method indexOfMinValue looking for from start index to finish index
+     * and return an element`s index with min value in array
+     * @param data arr for search
+     * @param startIndex start index for search
+     * @param finishIndex finish index for search
+     * @return index of an element with min value in array
+     */
+    public int indexOfMinValue(int[] data, int startIndex, int finishIndex) {
+        if (startIndex > finishIndex) {
+            int memory = startIndex;
+            startIndex = finishIndex;
+            finishIndex = memory;
+        }
+        int memoryIndex = startIndex >= 0 ? startIndex : 0;
+        for (int i = memoryIndex + 1; i < data.length && i <= finishIndex; i++) {
+            if (data[memoryIndex] > data[i]) {
+                memoryIndex = i;
+            }
+        }
+        return memoryIndex;
+    }
+
+    /**
+     * Method sort sorts elements in array from min value to max value
+     * @param data arr for search
+     * @return array with sorted values from min value to max value
+     */
+    public int[] sort(int[] data) {
+        for (int i = 1; i < data.length; i++) {
+            int indexMinValue = indexOfMinValue(data, i, data.length);
+            if (data[i - 1] > data[indexMinValue]) {
+                int memory = data[i - 1];
+                data[i - 1] = data[indexMinValue];
+                data[indexMinValue] = memory;
+            }
+        }
+        return data;
     }
 }

@@ -6,6 +6,9 @@ import static org.junit.Assert.assertThat;
 
 public class FindLoopTest {
 
+    /**
+     * Tests for method public int indexOf(int[] data, int el)
+     */
     @Test
     public void whenArrayHas5Then0() {
         FindLoop find = new FindLoop();
@@ -36,6 +39,9 @@ public class FindLoopTest {
         assertThat(result, is(expect));
     }
 
+    /**
+     * Tests for method public int indexOf(int[] data, int el, int startIndex, int finishIndex)
+     */
     @Test
     public void whenFindThen3() {
         FindLoop find = new FindLoop();
@@ -69,6 +75,43 @@ public class FindLoopTest {
         int finish = 77777;
         int result = find.indexOf(input, value, start, finish);
         int expect = 7;
+        assertThat(result, is(expect));
+    }
+
+    /**
+     * Tests for method public int indexOfMinValue(int[] data, int startIndex, int finishIndex)
+     */
+    @Test
+    public void whenMinValueIs5ThenIndexIs6() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {8, 9, 18, 7, 10, 8, 5, 18};
+        int startIndex = 1;
+        int finishIndex = 6;
+        int result = find.indexOfMinValue(input, startIndex, finishIndex);
+        int expect = 6;
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenMinValueIs5ButStartIndexAndFinishIndexIsOutOfArrayLengthIs6() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {8, 9, 18, 7, 10, 8, 5, 18};
+        int startIndex = -77777;
+        int finishIndex = 77777;
+        int result = find.indexOfMinValue(input, startIndex, finishIndex);
+        int expect = 6;
+        assertThat(result, is(expect));
+    }
+
+    /**
+     * Tests for method public int[] sort(int[] data)
+     */
+    @Test
+    public void whenSort5() {
+        FindLoop find = new FindLoop();
+        int[] input = new int[] {3, 4, 1, 2, 5, 3, 4, 1, 2, 5};
+        int result[] = find.sort(input);
+        int[] expect = new int[] {1, 1, 2, 2, 3, 3, 4, 4, 5, 5};
         assertThat(result, is(expect));
     }
 }
