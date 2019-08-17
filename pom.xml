@@ -43,11 +43,10 @@
                     <configLocation>checkstyle.xml</configLocation>
                     <encoding>UTF-8</encoding>
                     <consoleOutput>true</consoleOutput>
-                    <failsOnError>true</failsOnError>
-                        //add by Petr
-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                        //add by (https://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html)
-                    <linkXRef>false</linkXRef>
+                    <failsOnError>false</failsOnError> //флаг false позволяет видеть текст ошибки в ИДЕА
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory> //add by Petr
+                    <linkXRef>true</linkXRef> //add by me from link --->
+                    //  ----> (https://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html)
                 </configuration>
                 <executions>
                     <execution>
@@ -61,5 +60,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
