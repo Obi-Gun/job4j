@@ -86,6 +86,9 @@ public class Logic {
                         break;
                     }
                 }
+                if (result == true) {
+                    break;
+                }
             }
             if (table[0][i] == 1) {
                 result = true;
@@ -94,6 +97,9 @@ public class Logic {
                         result = false;
                         break;
                     }
+                }
+                if (result == true) {
+                    break;
                 }
             }
         }
