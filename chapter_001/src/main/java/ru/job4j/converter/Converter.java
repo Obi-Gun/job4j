@@ -4,20 +4,20 @@ public class Converter {
     int euros = 70;
     int dollars = 60;
 
-    public double rubleToEuro(double valueRubles) {
-        return valueRubles / this.euros;
+    public double rubleToEuro(double rubles) {
+        return rubles / this.euros;
     }
 
-    public double rubleToDollar(double valueRubles) {
-        return valueRubles / this.dollars;
+    public double rubleToDollar(double rubles) {
+        return rubles / this.dollars;
     }
 
-    public double euroToRuble(double valueEuros) {
-        return valueEuros * this.euros;
+    public double euroToRuble(double euros) {
+        return euros * this.euros;
     }
 
-    public double dollarToRuble(double valueDollars) {
-        return valueDollars * this.dollars;
+    public double dollarToRuble(double dollars) {
+        return dollars * this.dollars;
     }
 
     public static void main(String[] args) {

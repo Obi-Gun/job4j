@@ -18,7 +18,6 @@ public class Square {
         int conter = 1;
         for (int i = 0; i < rst.length; i++) {
             rst[i] = (int) Math.pow(conter++, 2);
-//            conter++;
         }
         return rst;
     }

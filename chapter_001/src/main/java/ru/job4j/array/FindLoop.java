@@ -30,23 +30,23 @@ public class FindLoop {
      * from start index to finish index and return index of an element
      * @param data arr for search
      * @param el element for search
-     * @param startIndex start index for search
-     * @param finishIndex finish index for search
+     * @param start start index for search
+     * @param finish finish index for search
      * @return index of an element or -1 if method doesn`t have find an element
      */
-    public int indexOf(int[] data, int el, int startIndex, int finishIndex) {
-        if (startIndex > finishIndex) {
-            int memory = startIndex;
-            startIndex = finishIndex;
-            finishIndex = memory;
+    public int indexOf(int[] data, int el, int start, int finish) {
+        if (start > finish) {
+            int memory = start;
+            start = finish;
+            finish = memory;
         }
-        if (startIndex < 0) {
-            startIndex = 0;
+        if (start < 0) {
+            start = 0;
         }
         int rst = -1; // если элемента нет в массиве, то возвращаем -1.
-        for (int index = startIndex; index < data.length && index <= finishIndex; index++) {
-            if (data[index] == el) {
-                rst = index;
+        for (int i = start; i < data.length && i <= finish; i++) {
+            if (data[i] == el) {
+                rst = i;
                 break;
             }
         }
@@ -57,23 +57,23 @@ public class FindLoop {
      * Method indexOfMinValue looking for from start index to finish index
      * and return an element`s index with min value in array
      * @param data arr for search
-     * @param startIndex start index for search
-     * @param finishIndex finish index for search
+     * @param start start index for search
+     * @param finish finish index for search
      * @return index of an element with min value in array
      */
-    public int indexOfMinValue(int[] data, int startIndex, int finishIndex) {
-        if (startIndex > finishIndex) {
-            int memory = startIndex;
-            startIndex = finishIndex;
-            finishIndex = memory;
+    public int indexOfMinValue(int[] data, int start, int finish) {
+        if (start > finish) {
+            int tmp = start;
+            start = finish;
+            finish = tmp;
         }
-        int memoryIndex = startIndex >= 0 ? startIndex : 0;
-        for (int i = memoryIndex + 1; i < data.length && i <= finishIndex; i++) {
-            if (data[memoryIndex] > data[i]) {
-                memoryIndex = i;
+        int memory = start >= 0 ? start : 0;
+        for (int i = memory + 1; i < data.length && i <= finish; i++) {
+            if (data[memory] > data[i]) {
+                memory = i;
             }
         }
-        return memoryIndex;
+        return memory;
     }
 
     /**
@@ -83,11 +83,11 @@ public class FindLoop {
      */
     public int[] sort(int[] data) {
         for (int i = 1; i < data.length; i++) {
-            int indexMinValue = indexOfMinValue(data, i, data.length);
-            if (data[i - 1] > data[indexMinValue]) {
+            int index = indexOfMinValue(data, i, data.length);
+            if (data[i - 1] > data[index]) {
                 int memory = data[i - 1];
-                data[i - 1] = data[indexMinValue];
-                data[indexMinValue] = memory;
+                data[i - 1] = data[index];
+                data[index] = memory;
             }
         }
         return data;
