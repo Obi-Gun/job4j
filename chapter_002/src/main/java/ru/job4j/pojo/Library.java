@@ -23,14 +23,14 @@ public class Library {
 
     /**
      * Method shows how many elements does it have and what are they looks like.
-     * @param books
+     * @param books Book array.
      */
     public static void showBooks(Book[] books) {
         System.out.format("massive has %d books\n", books.length);
         for (Book book: books) {
             System.out.format("Book named %s has %d pages\n", book.getName(), book.getPages());
         }
-        System.out.println("\n");
+        System.out.println("");
     }
 
     /**
@@ -44,7 +44,7 @@ public class Library {
                 System.out.format("Book named %s has %d pages\n", book.getName(), book.getPages());
             }
         }
-        System.out.println("\n");
+        System.out.println("");
     }
 
     /**
