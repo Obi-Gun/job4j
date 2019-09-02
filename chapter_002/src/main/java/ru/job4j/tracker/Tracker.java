@@ -1,5 +1,7 @@
 package ru.job4j.tracker;
 
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 
 /**
@@ -33,13 +35,17 @@ public class Tracker {
      * Method заменяет объект в ячейке с id массива items на объект item.
      * @param id will be delete from items.
      * @param item will be add to array items.
-     * @return true if all right or false if smth wrong.
+     * @return true if all right or false if smth goes wrong.
      */
     public boolean replace(String id, Item item) {
         boolean rsl = false;
         int index = this.findIndexById(id);
+        if (Objects.isNull(item.getId())) {
+            item.setId(this.generateId());
+        }
         if (index != -1) {
             this.items[index] = item;
+            rsl = true;
         }
         return rsl;
     }
@@ -62,15 +68,11 @@ public class Tracker {
     }
 
     /**
-     * Method returns array which contains only items we`ve added before.
+     * Method returns new array which contains only items we`ve added before.
      * @return array without null items.
      */
     public Item[] findAll() {
-        Item[] result = new Item[this.position];
-        for (int i = 0; i != this.position; i++) {
-            result[i] = this.items[i];
-        }
-        return result;
+        return Arrays.copyOf(this.items, this.position);
     }
 
     /**
@@ -148,7 +150,7 @@ public class Tracker {
         return position;
     }
 
-    public void setPosition(int position) {
+    private  void setPosition(int position) {
         this.position = position;
     }
 }
