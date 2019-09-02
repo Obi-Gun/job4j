@@ -32,7 +32,7 @@ public class Tracker {
     }
 
     /**
-     * Method заменяет объект в ячейке с id массива items на объект item.
+     * Method updates item with special id. (Заменяет объект в ячейке с id массива items на объект item.
      * @param id will be delete from items.
      * @param item will be add to array items.
      * @return true if all right or false if smth goes wrong.
@@ -40,9 +40,7 @@ public class Tracker {
     public boolean replace(String id, Item item) {
         boolean rsl = false;
         int index = this.findIndexById(id);
-        if (Objects.isNull(item.getId())) {
-            item.setId(this.generateId());
-        }
+        item.setId(id);
         if (index != -1) {
             this.items[index] = item;
             rsl = true;
