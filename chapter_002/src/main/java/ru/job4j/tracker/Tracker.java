@@ -102,9 +102,9 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (Item item : this.items) {
-            if (item != null && item.getId().equals(id)) {
-                result = item;
+        for (int i = 0; i < this.position; i++) {
+            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+                result = this.items[i];
                 break;
             }
         }

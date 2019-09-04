@@ -207,4 +207,11 @@ public class TrackerTest {
         Item expect = null;
         assertThat(result, is(expect));
     }
+    @Test
+    public void ifItemsIsEmptyThenNullThenTrue() {
+        Tracker tracker = new Tracker();
+        Item result = tracker.findById("111000111");
+        Item expect = null;
+        assertThat(result, is(expect));
+    }
 }
