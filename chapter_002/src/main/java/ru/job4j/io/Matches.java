@@ -24,8 +24,8 @@ public class Matches {
      * Main logic of the game. Method checks the winner.
      */
     private void logic() {
-        System.out.println("ИГРА 11\n" + "На столе лежат 11 спичек. Два игрока по очереди берут от 1 до 3 спичек. " +
-                "Выигрывает тот, кто забрал последние спички.");
+        System.out.println("ИГРА 11\n" + "На столе лежат 11 спичек. Два игрока по очереди берут от 1 до 3 спичек. "
+                + "Выигрывает тот, кто забрал последние спички.");
         boolean exit = false;
         while (!exit) {
             this.switchPlayers();
@@ -41,7 +41,7 @@ public class Matches {
     /**
      * Method switches players. Because they need to play one by one.
      */
-    private void switchPlayers () {
+    private void switchPlayers() {
         if (this.player.equals(this.player1)) {
             this.player = this.player2;
         } else {
@@ -52,11 +52,11 @@ public class Matches {
     /**
      * Method writes who is the winner.
      */
-    private void showTheWinner () {
+    private void showTheWinner() {
         if (this.player.equals(this.player1)) {
-            System.out.println("Победил игрок " + this.player1);;
+            System.out.println("Победил игрок " + this.player1);
         } else {
-            System.out.println("Победил игрок " + this.player2);;
+            System.out.println("Победил игрок " + this.player2);
         }
     }
 
@@ -64,8 +64,8 @@ public class Matches {
      * Method asks to input integer, then checks is input equals 1 or 2 or 3.
      */
     private void input() {
-        System.out.println("Очередь игрока " + this.player + ". Осталось " + this.counter +
-                " спичек. Сколько спичек хотите взять?");
+        System.out.println("Очередь игрока " + this.player + ". Осталось " + this.counter
+                + " спичек. Сколько спичек хотите взять?");
         int tmp = 0;
         boolean exit = false;
         while (!exit) {

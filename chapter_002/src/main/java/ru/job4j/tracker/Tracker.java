@@ -32,7 +32,7 @@ public class Tracker {
     }
 
     /**
-     * Method updates item with special id. (Заменяет объект в ячейке с id массива items на объект item.
+     * Method updates item with special id (Заменяет объект в ячейке с id массива items на объект item).
      * @param id will be delete from items.
      * @param item will be add to array items.
      * @return true if all right or false if smth goes wrong.
@@ -98,12 +98,12 @@ public class Tracker {
     /**
      * Method looking for element with special id.
      * @param id searching element.
-     * @return searching element.
+     * @return searching element or null.
      */
     public Item findById(String id) {
         Item result = null;
         for (int i = 0; i < this.position; i++) {
-            if (this.items[i] != null && this.items[i].getId().equals(id)) {
+            if (this.items[i].getId().equals(id)) {
                 result = this.items[i];
                 break;
             }
@@ -112,8 +112,8 @@ public class Tracker {
     }
 
     /**
-     * Method looking for element with special id.
-     * @param id searching element.
+     * Method looking for an element with special id.
+     * @param id of searching element.
      * @return id of searching element.
      */
     private int findIndexById(String id) {
