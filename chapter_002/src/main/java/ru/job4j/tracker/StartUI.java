@@ -118,6 +118,7 @@ public class StartUI {
         System.out.println("------------ description : " + item.getDescription() + "-----------");
     }
 
+
     /**
      * Method asks id of method what we want to edit.
      * Then method shows it. Then it asks for edit fields and edit it.
@@ -126,15 +127,19 @@ public class StartUI {
         System.out.println("Enter task`s id, please :");
         String id = scanner.nextLine();
         Item item = this.tracker.findById(id);
-        this.showItem(item);
-        String name = this.editName(item);
-        String description = this.editDescription(item);
-        boolean ready = this.tracker.replace(id, new Item(name, description));
-        if (ready) {
-            System.out.println("Item was edited successful");
+        if (Objects.isNull(item)) {
+            System.out.println("Item with id [" + id + "] wasn't found.");
         } else {
-            System.out.println("Editing wasn't successful. "
-                    + "Please, write a report to IT support if you see this message");
+            this.showItem(item);
+            String name = this.editName(item);
+            String description = this.editDescription(item);
+            boolean ready = this.tracker.replace(id, new Item(name, description));
+            if (ready) {
+                System.out.println("Item was edited successful");
+            } else {
+                System.out.println("Editing wasn't successful. "
+                        + "Please, write a report to IT support if you see this message");
+            }
         }
     }
 
@@ -147,7 +152,16 @@ public class StartUI {
         System.out.println("If you would like edit field [name] then enter the name, "
                 + "or skip (press enter) if you wouldn't like to edit the field");
         String name = scanner.nextLine();
-        if (Objects.isNull(name)) {
+        return this.copyIfNameEmpty(name, item);
+    }
+    /**
+     * Method copies name from item if name is empty (It is empty if user didn't want to change it).
+     * @param name user input.
+     * @param item which we will copy if name is empty
+     * @return name.
+     */
+    private String copyIfNameEmpty(String name, Item item) {
+        if (name.length() == 0) {
             name = item.getName();
         }
         return name;
@@ -162,11 +176,21 @@ public class StartUI {
         System.out.println("If you would like edit field [description] then enter the description, "
                 + "or skip (press enter) if you wouldn't like to edit the field");
         String description = scanner.nextLine();
-        if (Objects.isNull(description)) {
+        return this.copyIfDescEmpty(description, item);
+    }
+    /**
+     * Method copies desc from item if desc is empty (It is empty odf user didn't want to change it).
+     * @param description user input.
+     * @param item which we will copy if description is empty
+     * @return description.
+     */
+    private String copyIfDescEmpty(String description, Item item) {
+        if (description.length() == 0) {
             description = item.getDescription();
         }
         return description;
     }
+
 
     /**
      * Method deletes item from array.
