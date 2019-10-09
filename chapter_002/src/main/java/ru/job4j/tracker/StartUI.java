@@ -1,7 +1,6 @@
 package ru.job4j.tracker;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 /**
  * Class for "Реализация класса StartUI [#784]" task.
@@ -40,7 +39,7 @@ public class StartUI {
      */
     private static final String EXIT = "6";
 
-    private Scanner scanner = new Scanner(System.in);
+    private Input input = new ConsoleInput();
     private Tracker tracker = new Tracker();
 
     /**
@@ -50,7 +49,7 @@ public class StartUI {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
-            String answer = scanner.nextLine();
+            String answer = input.askStr("");
             if (answer.equals(ADD)) {
                 this.createItem();
             } else if (answer.equals(SHOW)) {
@@ -78,9 +77,9 @@ public class StartUI {
     private void createItem() {
         System.out.println("------------ Adding new task... --------------");
         System.out.println("Add name for new task, please :");
-        String name = scanner.nextLine();
+        String name = input.askStr("");
         System.out.println("Add description for new task, please :");
-        String desc = scanner.nextLine();
+        String desc = input.askStr("");
         Item item = new Item(name, desc);
         this.tracker.add(item);
         System.out.println("------------ New task`s id : " + item.getId() + "-----------");
@@ -125,7 +124,7 @@ public class StartUI {
      */
     private void edit() {
         System.out.println("Enter task`s id, please :");
-        String id = scanner.nextLine();
+        String id = input.askStr("");
         Item item = this.tracker.findById(id);
         if (Objects.isNull(item)) {
             System.out.println("Item with id [" + id + "] wasn't found.");
@@ -151,7 +150,7 @@ public class StartUI {
     private String editName(Item item) {
         System.out.println("If you would like edit field [name] then enter the name, "
                 + "or skip (press enter) if you wouldn't like to edit the field");
-        String name = scanner.nextLine();
+        String name = input.askStr("");
         return this.copyIfNameEmpty(name, item);
     }
     /**
@@ -175,7 +174,7 @@ public class StartUI {
     private String editDescription(Item item) {
         System.out.println("If you would like edit field [description] then enter the description, "
                 + "or skip (press enter) if you wouldn't like to edit the field");
-        String description = scanner.nextLine();
+        String description = input.askStr("");
         return this.copyIfDescEmpty(description, item);
     }
     /**
@@ -198,7 +197,7 @@ public class StartUI {
     private void delete() {
         System.out.println("------------ Deleting task... --------------\n"
                 + "Enter task`s id, please :");
-        boolean successful = this.tracker.delete(scanner.nextLine());
+        boolean successful = this.tracker.delete(input.askStr(""));
         if (successful) {
             System.out.println("Item was deleted");
         } else {
@@ -213,7 +212,7 @@ public class StartUI {
     private void findById() {
         System.out.println("------------ Searching task... --------------\n"
                 + "Enter task`s id, please :");
-        String id = scanner.nextLine();
+        String id = input.askStr("");
         Item item = this.tracker.findById(id);
         if (Objects.isNull(item)) {
             System.out.format("Task with  id : %s wasn't found.\n", id);
@@ -228,7 +227,7 @@ public class StartUI {
     private void findByName() {
         System.out.println("------------ Searching task... --------------\n"
                 + "Enter task`s name, please :");
-        String name = scanner.nextLine();
+        String name = input.askStr("");
         Item[] items = this.tracker.findByName(name);
         if (Objects.isNull(items)) {
             System.out.format("Tasks with name : %s weren't found.\n", name);
@@ -257,6 +256,7 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
+//        Input input = new ConsoleInput();
         StartUI startUI = new StartUI();
         startUI.init();
     }
